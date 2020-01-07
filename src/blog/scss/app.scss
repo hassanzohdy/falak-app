@@ -1,0 +1,15 @@
+// import your app files instead of writing code directly here!
+@import 'colors';
+
+// special variables
+// $direction: rtl|ltr >> the current direction of the application
+// $right: `right` on ltr and `left` or rtl
+// $left: `left` on ltr and `right` or rtl
+
+@if $direction==ltr {
+    // 
+}
+
+@else {
+    // 
+}

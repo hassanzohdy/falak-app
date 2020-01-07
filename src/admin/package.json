@@ -1,0 +1,21 @@
+{
+    "name": "admin",
+    "favicon": "",
+    "assets": [],
+    "packages": [
+        "@flk/autocomplete-input",
+        "@flk/seo",
+        "@flk/message",
+        "@flk/image-input",
+        "@flk/datepicker",
+        "@flk/ckeditor",
+        "@flk/admin"
+    ],
+    "modules": [
+        "admin-settings",
+        "home",
+        "tags",
+        "settings",
+        "users"
+    ]
+}

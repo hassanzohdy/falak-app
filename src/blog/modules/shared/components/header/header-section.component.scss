@@ -1,0 +1,72 @@
+header {
+    #header-wrapper {
+        // display: flex;
+        padding: 1rem 0;
+
+        // & > * {
+        //     flex: 1;
+        // }
+
+        #logo {
+            // margin-top: 0.6rem;
+            // flex: 2;
+            @include responsive((
+                $mobile-device-width :(
+                    margin: auto,
+                    margin-bottom: 1rem,
+                    width: 90%,
+                    flex: 0 0 90%,
+                )
+            ), max);                
+        }
+
+        #chairman-wrapper {
+            // margin-#{$left}: 1rem;
+            color: #666;
+            text-align: center;
+            // display: none;
+
+            > div {                
+                margin-top: 0.3rem;
+            }
+
+            @include responsive((
+                $mobile-device-width :(
+                    margin-top: 0.5rem,
+                    margin-bottom: 1rem,
+                    font-size: 0.7rem,
+                )
+            ), max);
+            
+            .name {
+                color: #000;
+            }
+
+            #chairman,
+            #executiveEditor {
+                @include responsive((
+                    $mobile-device-width :(
+                        display: inline-block,
+                        width: 40%,
+                    )
+                ), max);                
+            }
+        }
+
+        #headerBanner {
+            margin-top: 1rem;
+            max-height: 100px;
+            
+            // margin-top: 1.0rem;
+            // flex: 3;
+
+            section {
+                margin-top: 0 !important;
+            }
+
+            img {
+                height: 90px;
+            }
+        }
+    }
+}

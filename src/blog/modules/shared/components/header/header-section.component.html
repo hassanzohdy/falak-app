@@ -1,0 +1,34 @@
+<header>
+    <div class="container">
+        <div id="header-wrapper" class="row">
+            <a href="/" title="siteName" class="col-12 col-sm-3" id="logo">
+                <img [src]="this.settings('general.logo') || assets('images/logo.png')" [alt]="trans('siteName')" />
+            </a>
+
+            <div id="chairman-wrapper" class="col-12 col-sm-3">
+                <div id="chairman">
+                    <div class="bold" trans="chairman"></div>
+                    <div class="bold name" [html]="this.settings('general.chairman')"></div>
+                </div>
+                <div id="executiveEditor">
+                    <div class="bold" trans="executiveEditor"></div>
+                    <div class="bold name" [html]="this.settings('general.executiveEditor')"></div>
+                </div>
+            </div>
+
+            <div id="headerBanner" class="col-12 col-sm">
+                <campaign-widget *if="this.settings('headerBanner') && this.settings('headerBanner.type') == 'campaign'"
+                    [widget]="this.settings('headerBanner')">
+                </campaign-widget>
+            </div>
+
+            <!-- <a id="headerBanner" class="col-12 col-sm" [href]="this.settings('headerBanner.link')">
+                <img *if="this.settings('headerBanner') && this.settings('headerBanner.type') == 'campaign'"
+                    [src]="this.settings('headerBanner.image')" [alt]="this.settings('headerBanner.caption')" />
+            </a> -->
+        </div>
+    </div>
+    </div>
+</header>
+<main-menu></main-menu>
+<latest-news></latest-news>

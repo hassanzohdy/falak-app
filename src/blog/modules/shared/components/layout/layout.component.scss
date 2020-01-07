@@ -1,0 +1,75 @@
+.sidebar-container {
+    $sidebar-width: 300px;
+    // display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+
+    &.fade {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @include responsive((1024: (flex: 0 0 $sidebar-width,
+                max-width: $sidebar-width,
+                // padding: 0,            
+            )));
+}
+
+#preloader {
+    // background: linear-gradient(20deg,#f84270 0%,#fe803b 100%);
+    background: linear-gradient(20deg, $primary-color, #fe803b);
+    background-size: 300% 300%;
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    transition: all 0.8s ease-in-out;
+
+    @keyframes animatedGradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    animation: animatedGradient 3s ease alternate infinite;
+
+    &.faded {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .bounce {
+            background: #FFF;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+main {
+    @include responsive(($mobile-device-width :(padding: 0.5rem,
+            )), max);
+}
+
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+}

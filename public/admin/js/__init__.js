@@ -1,0 +1,1 @@
+const BASE_URL = "http://localhost:82"; const APP_NAME = 'admin'; const _C = ['development','admin','http://localhost:82','/admin'];var LANGUAGES = {"en":{"direction":"ltr","name":"English"},"ar":{"direction":"rtl","name":"العربية"}};

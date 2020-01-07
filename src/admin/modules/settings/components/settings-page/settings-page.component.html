@@ -1,0 +1,90 @@
+<layout>
+    <flk-spinner *if="this.isLoading"></flk-spinner>
+    <form *else (submit)="this.submit($el)">
+        <button class="btn btn-success bold float-left waves-effect waves-light submit-btn" tooltip
+            [title]="trans('save')" [disabled]="! this.isValidForm || this.isUpdating">
+            <fa icon="save"></fa>
+            <span class="mr-2" trans="save"></span>
+        </button>
+        <h1>
+            <span trans="settings"></span>
+            <fa spin="cog mr-1"></fa>
+        </h1>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <button type="button" class="nav-link" data-target="#general-panel"
+                    [class]="{active: this.activeTab == 'general'}" (click)="this.activeTab = 'general'">
+                    <fa icon="home"></fa>
+                    <span trans="generalSettings"></span>
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" type="button" data-target="#contact-panel"
+                    [class]="{active: this.activeTab == 'contact'}" (click)="this.activeTab = 'contact'">
+                    <fa icon="phone"></fa>
+                    <span trans="contactSettings"></span>
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" type="button" data-target="#social-panel"
+                    [class]="{active: this.activeTab == 'social'}" (click)="this.activeTab = 'social'">
+                    <fa icon="share-alt"></fa>
+                    <span trans="socialSettings"></span>
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content row m-t-2">
+            <div class="tab-pane col-sm-9" [class]="this.activePanel('general')" id="general-panel">
+                <input type="hidden" name="type" value="generalSettings" />
+                <form-input type="textarea" name="settings.general.shortDescription" class="form-control"
+                    [value]="this.settings?.general?.shortDescription" label="shortDescription" required>
+                </form-input>
+                <form-input type="text" name="settings.general.chairman" class="form-control"
+                    [value]="this.settings?.general?.chairman" label="chairman" required>
+                </form-input>
+
+                <form-input type="text" name="settings.general.executiveEditor" class="form-control"
+                    [value]="this.settings?.general?.executiveEditor" label="executiveEditor" required>
+                </form-input>
+
+                <div class="form-group">
+                    <label for="logo" trans="logo"></label>
+                    <flk-image-input id="logo" [src]="this.settings?.general?.logo" name="settings.general.logo">
+                    </flk-image-input>
+                </div>
+
+            </div>
+            <div class="tab-pane col-sm-9" id="contact-panel" [class]="this.activePanel('contact')">
+                <form-input type="email" name="settings.contact.email" class="form-control" label="email"
+                    [value]="this.settings?.contact?.email" required>
+                </form-input>
+                <form-input type="text" name="settings.contact.telephone" class="form-control"
+                    [value]="this.settings?.contact?.telephone" label="telephone" required>
+                </form-input>
+                <form-input type="text" name="settings.contact.address" class="form-control"
+                    [value]="this.settings?.contact?.address" label="address" required>
+                </form-input>
+            </div>
+            <div class="tab-pane col-sm-9" id="social-panel" [class]="this.activePanel('social')">
+                <form-input type="text" name="settings.social.facebook" class="form-control"
+                    [value]="this.settings?.social?.facebook" label="facebook">
+                </form-input>
+                <form-input type="text" name="settings.social.twitter" [value]="this.settings?.social?.twitter"
+                    class="form-control" label="twitter">
+                </form-input>
+                <form-input type="text" name="settings.social.instagram" [value]="this.settings?.social?.instagram"
+                    class="form-control" label="instagram">
+                </form-input>
+                <form-input type="text" name="settings.social.youtube" [value]="this.settings?.social?.youtube"
+                    class="form-control" label="youtube">
+                </form-input>
+            </div>
+        </div>
+    </form>
+</layout>
+
+<flk-message *if="this.successSave" (close)="this.successSave = false"> 
+    <span trans="successSave"></span>
+</flk-message>

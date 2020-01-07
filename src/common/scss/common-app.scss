@@ -1,0 +1,11 @@
+// Falak scss helpers, mixins and functions 
+@import '@flk/scss/dist/all';
+.btn-circle {
+    border-radius: 50%;
+    padding: 1rem !important;
+}
+
+
+.w-80 {
+    width: 80%;
+}

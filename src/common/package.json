@@ -1,0 +1,35 @@
+{
+    "name": "common",
+    "type": "app",
+    "favicon": "images/favicon.png",
+    "packages": [
+        "@flk/support-javascript",
+        "@flk/support-helpers",
+        "@flk/supportive-is",
+        "@flk/config",
+        "@flk/application",
+        "@flk/http",
+        "@flk/router",
+        "@flk/layout",
+        "@flk/events",
+        "@flk/cache",
+        "@flk/locale",
+        "@flk/meta",
+        "@flk/form",
+        "@flk/user",
+        "@flk/random",
+        "@flk/endpoint-service"
+    ],
+    "externals": {
+        "css": {
+            "common": []
+        }
+    },
+    "assets": [
+        "images"
+    ],
+    "modules": [
+        "locales",
+        "shared"
+    ]
+}

@@ -1,0 +1,26 @@
+<flk-modal *as="modal" size="medium" (close)="this.close()" heading="{{ trans(this.heading, trans(this.itemName)) }}">
+    <form (submit)="this.submit($el)">
+        <form-input type="text" name="name" label="name" [value]="this.data.name" required class="form-control"></form-input>
+
+        <h3 trans="permissions"></h3>
+
+        <hr />
+
+        <div class="row">
+            <div *for="let permission, permissionsList in ADMIN.PERMISSIONS_LIST" class="col-sm-6 col-md-4 col-lg-3 ">                
+                <h6 class="bold">
+                    {{ trans('canAccess', trans(permission)) }}
+                </h6>
+                <flk-mdb-checkbox *for="let permissionValue, permissionText in permissionsList" 
+                                  [name]="'permissions.' + permission + '.' + permissionValue" 
+                                  [value]="1"
+                                  [checked]="this.isCheckedPermission(permission, permissionValue)"
+                                  (change)="this.checkPermission(permission, permissionValue, $el.checked)"
+                                  [label]="permissionText"></flk-mdb-checkbox>
+                <hr class="m-t-2 d-block" />
+            </div>
+        </div>
+
+        <form-buttons></form-buttons>
+    </form>
+</flk-modal>

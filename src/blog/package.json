@@ -1,0 +1,24 @@
+{
+    "name": "blog",
+    "favicon": "",
+    "assets": [],
+    "packages": [
+        "@flk/shareable",
+        "@flk/copy2clipboard"
+    ],
+    "externals": {
+        "js": [
+            "//cdn.iframe.ly/embed.js?api_key=77d35efa15efa65f2dca81"
+        ]
+    },
+    "modules": [
+        "shared",
+        "users",
+        "home",
+        "search",
+        "news",
+        "articles",
+        "facebook-page-preview",
+        "campaigns"
+    ]
+}

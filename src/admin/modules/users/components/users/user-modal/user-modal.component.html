@@ -1,0 +1,23 @@
+<flk-modal *as="modal" (close)="this.close()" heading="{{ trans(this.heading, trans('user')) }}">
+    <form (submit)="this.submit($el)">
+        <form-input type="text" name="name" label="name" [value]="this.data.name" required class="form-control">
+        </form-input>
+        <form-input type="email" name="email" label="email" [value]="this.data.email" required class="form-control">
+        </form-input>
+
+        <form-input type="password" name="password" minlength="8" label="password" [required]="! this.data.id" class="form-control">
+        </form-input>
+
+        <form-input type="password" match="password" name="confirmPassword" label="confirmPassword"[required]="! this.data.id" class="form-control">
+        </form-input>
+
+        <flk-dropdown-list 
+            name="groupId" 
+            [lazy-loading]="true"
+            [service]="this.usersGroupsService"
+            [value]="this.data.group.id" 
+            label="group"></flk-dropdown-list>
+
+        <form-buttons></form-buttons>
+    </form>
+</flk-modal>

@@ -1,0 +1,4 @@
+<admin-table [options]="this.options" [is-loading]="this.isLoading" [records]="this.records"></admin-table>
+
+<user-group-modal *if="this.addModal" (save)="this.records.push(e)" (close)="this.addModal = false"></user-group-modal>
+<user-group-modal *if="this.editModal" [record]="this.currentRecord" (save)="this.updateRecord(e)" (close)="this.editModal = false"></user-group-modal>

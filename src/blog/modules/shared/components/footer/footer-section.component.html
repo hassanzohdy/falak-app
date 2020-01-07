@@ -1,0 +1,21 @@
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3" id="footer-social">
+                <a *for="let social, url in this.settings('social')" [href]="url" class="{{ social }}" target="_blank"
+                    tooltip [title]="trans(social)">
+                    <fa [fab]="social == 'facebook' ? 'facebook-f' : social"></fa>
+                </a>
+            </div>
+
+            <div class="col-sm-6 text-center">
+                <div class="copyrights" [html]="trans('copyrights', '&copy; ' + this.year)"></div>
+            </div>
+
+            <a href="https://crafted-internet.com" target="_blank" class="col" id="crafted" title="Crafted With Care"
+                tooltip>
+                <span class="en">Crafted By: <span class="name">Crafted Internet</span></span>
+            </a>
+        </div>
+    </div>
+</footer>
