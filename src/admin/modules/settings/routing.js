@@ -2,7 +2,7 @@
 DI.resolve('events').subscribe('router.collecting', router => {
     router.group({
         prefix: '/settings',
-        middleware: [],
+        middleware: ['guardian'],
     }, routerGroup => {
         // routes list
         // Settings page

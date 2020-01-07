@@ -2,7 +2,7 @@
 DI.resolve('events').subscribe('router.collecting', router => {
     router.group({
         prefix: '/users',
-        middleware: [],
+        middleware: ['guardian'],
     }, routerGroup => {
         // routes list
         // Users page

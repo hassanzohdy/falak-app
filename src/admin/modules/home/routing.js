@@ -2,11 +2,11 @@
 DI.resolve('events').subscribe('router.collecting', router => {
     router.group({
         prefix: '/',
-        middleware: [],
+        middleware: ['guardian'],
     }, routerGroup => {
         // routes list
         // Home page
-        routerGroup.add('', HomePage);
+        routerGroup.add('/', HomePage);
 		// end of routes
     });
 });
