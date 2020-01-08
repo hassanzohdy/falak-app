@@ -12,6 +12,7 @@ Clone the repo then run the following command:
 `npm install`
 
 **yarn**
+
 `yarn install`
 
 # Starting the server
