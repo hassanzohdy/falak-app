@@ -3,7 +3,8 @@ class AuthService extends Endpoint.Service {
      * {@inheritDoc} 
      */
     boot() {
-        this.authorizable = null; // null means it will be auto detected if user is logged in or not
+        this.setRoute('/'); // this will ensure to add the baseRoute config as a prefix to all paths here.
+        this.authorizable = null; // null means it will be auto detected if user is logged in or not.
     }
 
     /**
