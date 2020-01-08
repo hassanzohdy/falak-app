@@ -1,16 +1,19 @@
 <div class="m-t-9">
     <form class="login-form m-auto" (submit)="this.login($el)">
-        <h1 class="bold text-center m-b-4" trans="welcome"></h1>
+        @echo(trans('welcome'))
+        <h1 class="bold text-center m-b-1" trans="welcome"></h1>
         <div *if="this.errorMsg" class="bold alert alert-danger" [html]="this.errorMsg"></div>
         <form-input type="email" autofocus name="email" label="email-address" required class="form-control">
         </form-input>
         <form-input type="password" minlength="8" name="password" label="password" required class="form-control">
         </form-input>
-        <button class="btn btn-primary btn-block" [disabled]="! this.isValidForm || this.isLoggingIn">
-            <span *if="! this.isLoggingIn" trans="login"></span>
-            <div *else class="text-center">
-                <fa icon="spinner fa-1x" spin></fa>
-            </div>
-        </button>
+        <div class="text-center">
+            <button class="btn btn-primary bold" [disabled]="! this.isValidForm || this.isLoggingIn">
+                <span *if="! this.isLoggingIn" trans="login"></span>
+                <div *else class="text-center">
+                    <fa icon="spinner fa-1x" spin></fa>
+                </div>
+            </button>            
+        </div>
     </form>
 </div>
