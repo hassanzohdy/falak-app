@@ -1,7 +1,10 @@
 <div class="m-t-9">
     <form class="login-form m-auto" (submit)="this.login($el)">
         <h1 class="bold text-center m-b-1" trans="welcome"></h1>
-        <div *if="this.errorMsg" class="bold alert alert-danger" [html]="this.errorMsg"></div>
+        <div *if="this.errorMsg" class="bold alert error white-text red">
+            <span [html]="this.errorMsg"></span>
+            <fa icon="times-circle ml-2"></fa>
+        </div>
         <form-input type="email" autofocus name="email" label="email-address" required class="form-control">
         </form-input>
         <form-input type="password" minlength="8" name="password" label="password" required class="form-control">

@@ -33,12 +33,11 @@ class LoginPage {
             this.user.login(response.user);
             this.router.navigateBack();
         }).catch(response => {
-            echo(response)
             this.isLoggingIn = false;
             if (response.errors) {
                 form.formHandler.setErrors(response.errors);
             } else if (response.error) {
-                this.errorMsg = trans('invalid-data');
+                this.errorMsg = trans('invalidData');
             }
         });
     }

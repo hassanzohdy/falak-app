@@ -12,7 +12,6 @@
         "@flk/admin"
     ],
     "modules": [
-        "admin-settings",
         "home",
         "tags",
         "shared",   
